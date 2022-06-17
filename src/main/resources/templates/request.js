@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<script>
 function userAction() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -15,13 +10,3 @@ function userAction() {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
 }
-</script>
-
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="userAction()">Request data</button>
-<p id="demo">loadDoc()</p>
-
-<script src="request.js"></script>
-
-</body>
-</html>

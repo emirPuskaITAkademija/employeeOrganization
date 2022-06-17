@@ -1,4 +1,4 @@
-package com.celebrate.organization.controller;
+package com.celebrate.organization.controller.rest;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;

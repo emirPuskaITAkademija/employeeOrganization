@@ -1,4 +1,4 @@
-package com.celebrate.organization.controller;
+package com.celebrate.organization.controller.mvc;
 
 import com.celebrate.organization.model.Employee;
 import com.celebrate.organization.service.EmployeeService;
@@ -35,5 +35,10 @@ public class EmployeeController {
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
         employeeService.saveEmployee(employee);
         return "redirect:/";
+    }
+
+    @GetMapping("/notes")
+    public String viewNotes(){
+        return "note";
     }
 }
