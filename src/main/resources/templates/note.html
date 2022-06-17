@@ -179,7 +179,7 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
             "topicName": updateName,
             "note": updateNotes
         };
-        console.log(param+"  <<<");
+        console.log(param + "  <<<");
         var params = JSON.stringify(param);
         console.log(params);
         xhr.send(params);
@@ -202,6 +202,29 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
         var notes = document.getElementById('form-note').value;
         xmlhttp.send(JSON.stringify({"topicName": name, "note": notes}));
         clearField();
+        closeAllModals();
+
+    }
+
+    function closeAllModals() {
+
+        // get modals
+        const modals = document.getElementsByClassName('modal');
+
+        // on every modal change state like in hidden modal
+        for (let i = 0; i < modals.length; i++) {
+            modals[i].classList.remove('show');
+            modals[i].setAttribute('aria-hidden', 'true');
+            modals[i].setAttribute('style', 'display: none');
+        }
+
+        // get modal backdrops
+        const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
+
+        // remove every modal backdrop
+        for (let i = 0; i < modalsBackdrops.length; i++) {
+            document.body.removeChild(modalsBackdrops[i]);
+        }
     }
 
     function showAllNoteCards() {
@@ -229,6 +252,7 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
         }
         xhr.send();
     }
+
     function refreshFunction() {
         showAllNoteCards();
     }
